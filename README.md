@@ -1,7 +1,8 @@
 # F1-CYD
-Display F1 (Formula 1) results and information on a CYD (Cheap Yellow Display) esp32. Integrating features such as touch display buttons, images, fetching from https websites, json and api integration.
+Display F1 (Formula 1) results and information on a CYD (Cheap Yellow Display) esp32. Information about the CYD can be found online, including https://randomnerdtutorials.com/cheap-yellow-display-esp32-2432s028r/
 
-If you have got an esp32 based CYD and want to get a head start in some projects, this is aimed at integrating a number of the various features you need.
+If you have got an esp32 based CYD and want to get a head start in some projects, this is aimed at integrating a number of the various features you might use such as touch display buttons, images, fetching from https websites, json and api integration.
+
 
 This project makes use of:
 * XPT2046 Touchscreen library - https://github.com/PaulStoffregen/XPT2046_Touchscreen
