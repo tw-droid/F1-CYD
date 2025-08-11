@@ -30,6 +30,7 @@ int tx = TFT_WHITE; // default text colour
 int bg = TFT_BLACK; // default background_colour
 
 int tz = 60*60*9.5; // number of seconds for the current timezone - this is +9.5 hours (South Australia)
+int weeks = 1; // number of weeks to look back. Start with 1, then expand if not enough results
 
 // Install the "XPT2046_Touchscreen" library by Paul Stoffregen to use the Touchscreen - https://github.com/PaulStoffregen/XPT2046_Touchscreen
 // Note: this library doesn't require further configuration
@@ -229,6 +230,7 @@ void loop() {
       Serial.println("HOME PRESSED");
       mode="allsessions";
       loading("Loading sessions");
+      weeks=1; // reset to just the last week
       load_sessions(); // reload sessions
       done=true;     
       updateDisplay();
@@ -380,7 +382,7 @@ void loading(String str)
 void load_sessions(){
   char date[11];
   struct tm weekago;
-  time_t prev_time = time(NULL) - 60*60*24*7;
+  time_t prev_time = time(NULL) - 60*60*24*7*weeks;
   gmtime_r(&prev_time, &weekago);
   strftime(date, sizeof(date), "%Y-%m-%d", &weekago);
   Serial.println(date);
@@ -406,6 +408,8 @@ void load_sessions(){
             i++;
             }
     session_count = i;
+    // if i<3 add a week to the result and requery
+    if (i<3){weeks++; load_sessions();}
   return;
 }
 
@@ -618,12 +622,13 @@ int RGB2int(String rgb) //convert a 24bit RGB colour hex code, into a 16bit TFT 
 
 
 // image functions below
-void PNGDraw(PNGDRAW *pDraw)
+int PNGDraw(PNGDRAW *pDraw)
 {
     uint16_t usPixels[320];
 
     png.getLineAsRGB565(pDraw, usPixels, PNG_RGB565_BIG_ENDIAN, 0xffffffff);
     tft.pushImage(SCREEN_WIDTH-pDraw->iWidth, pDraw->y, pDraw->iWidth, 1, usPixels);
+    return 1;
 }
 
 fs::File myfile;
