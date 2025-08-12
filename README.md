@@ -20,3 +20,7 @@ The software will list the recent F1 sessions that have occured as a sequence of
 Sometimes the API will refuse connections (probably when it has had a lot of connections in a short amount of time), so reloading later on should work.
 
 Feel free to fix bugs for me / suggest revisions and if it is helpful for you, then feel free to buy me a coffee.
+
+![screenshot](images/all_sessions.jpg)
+![screenshot](images/session.jpg)
+![screenshot](images/driver.jpg)
