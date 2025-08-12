@@ -15,7 +15,7 @@ This project makes use of:
 
 Load the .ino from the Arduino IDE, ensuring you have all relevant libraries installed. Edit the Wireless Access Point information, then upload it to your CYD.
 
-The software will list the F1 sessions that have occured in the last week as a sequence of buttons. By selecting the session, it will display the results of the session as driver buttons, colour coded for their teams. Clicking on the driver will provide a screen with an image and other information about the driver.
+The software will list the recent F1 sessions that have occured as a sequence of buttons. By selecting the session, it will display the results of the session as driver buttons, colour coded for their teams. Clicking on the driver will provide a screen with an image and other information about the driver.
 
 Sometimes the API will refuse connections (probably when it has had a lot of connections in a short amount of time), so reloading later on should work.
 
