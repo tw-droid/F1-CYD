@@ -10,7 +10,7 @@ This project makes use of:
 * TFT_eSPI_Button buttons that seem to integrate nicely between the display and the touchscreen
 * WiFiMulti and NetworkClientSecure libraries
 * OpenF1 API data (by default it looks for sessions / results from the past week, so there may be none if it is in the off-season): https://www.openf1.org/
-* png image loading using SPIFFS and fileFetcher and display using PNGdec library - https://github.com/bitbank2/PNGdec (1.1.3 works - 1.1.4 seems to have changed something that means it doesn't work)
+* png image loading using SPIFFS and fileFetcher and display using PNGdec library - https://github.com/bitbank2/PNGdec
 * 24bit RGB to 16bit TFT colour conversion function
 
 Load the .ino from the Arduino IDE, ensuring you have all relevant libraries installed. Edit the Wireless Access Point information, then upload it to your CYD.
